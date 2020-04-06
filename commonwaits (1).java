@@ -32,16 +32,12 @@ public class commonwaits {
 	    driver.findElement(By.xpath("//*[@id=\"footauto\"]/app-root/app-mycourse-main/section/app-header/header/nav/div/div[3]/ul/li[8]/div/ul/li[1]/a")).click();
 	    driver.findElement(By.xpath("//*[@id=\"personal_details\"]")).click();
 	    driver.findElement(By.xpath("//*[@id=\"collapseOne\"]/div/div/div[2]/a/i")).click();
-	
-	    
-	   driver.findElement(By.xpath("//div[@class='file-upload']")).click();
-	   System.out.println("first works");
-	    WebElement upload = driver.findElement(By.xpath("//div[@class='file-upload']"));
-	    Actions builder = new Actions(driver);
-	    builder.moveToElement(upload).click().build().perform();
-	
+	WebElement upload = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='file-upload']")));
+	    upload.click();
+	   
 	}
 
 	}
+
 
 
